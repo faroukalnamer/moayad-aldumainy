@@ -16,6 +16,18 @@
 </head>
 
 <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcementBar">
+        <div class="container announcement-content">
+            <i class="fas fa-bullhorn announcement-icon" aria-hidden="true"></i>
+            <p>🎉 إعلان هام: افتتاح فرع مؤيد الدميني الجديد في دمنة خدير - جوار مخبز الريان- مدخل شمعة! 🎉</p>
+            <a href="#branch" class="announcement-cta">عرض الفرع</a>
+            <button class="announcement-close" id="announcementClose" aria-label="إغلاق الإعلان">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container nav-container">
@@ -26,6 +38,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link active">الرئيسية</a></li>
                 <li><a href="#about" class="nav-link">من نحن</a></li>
+                <li><a href="#branch" class="nav-link">الفرع</a></li>
                 <li><a href="#services" class="nav-link">خدماتنا</a></li>
                 <li><a href="#brands" class="nav-link">العلامات التجارية</a></li>
                 <li><a href="#gallery" class="nav-link">معرض الأعمال</a></li>
@@ -73,20 +86,6 @@
                         خدماتنا
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="500">0</span>+
-                        <span class="stat-label">جهاز تم إصلاحه</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="100">0</span>%
-                        <span class="stat-label">رضا العملاء</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5">0</span>+
-                        <span class="stat-label">سنوات خبرة</span>
-                    </div>
-                </div>
             </div>
             <div class="hero-image">
                 <div class="hero-card">
@@ -107,7 +106,7 @@
     <section class="about section" id="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag"><i class="fas fa-info-circle"></i> تعرف علينا</span>
+                <span class="section-tag"><i class="fas fa-info-circle"></i> </span>
                 <h2 class="section-title">من نحن</h2>
                 <p class="section-subtitle">نحن متخصصون في صيانة وبرمجة جميع أنواع الهواتف الذكية وأجهزة الكمبيوتر
                     والمودمات</p>
@@ -147,6 +146,85 @@
                         <div class="about-feature">
                             <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
                             <span>سرعة في الإنجاز</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Section -->
+    <section class="branch section" id="branch">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-map-marker-alt"></i> فرعنا</span>
+                <h2 class="section-title">فرع مؤيد الدميني</h2>
+                <p class="section-subtitle">صور وتفاصيل فرعنا في دمنة خدير</p>
+            </div>
+            <div class="branch-gallery">
+                <div class="branch-item">
+                    <img src="branch/images/branchinfo.jpg" alt="معلومات الفرع" class="branch-img" loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>معلومات الفرع</h4>
+                            <p>تفاصيل شاملة عن موقع الفرع وخدماته</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0009.jpg" alt="داخل الفرع" class="branch-img" loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>داخل الفرع</h4>
+                            <p>رؤية للمساحة الداخلية المجهزة لخدمة العملاء</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0010.jpg" alt="أدوات العمل" class="branch-img"
+                        loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>أدوات العمل</h4>
+                            <p>معدات حديثة ومتطورة لإصلاح الأجهزة بدقة عالية</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0011.jpg" alt="منطقة الخدمة" class="branch-img"
+                        loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>منطقة الخدمة</h4>
+                            <p>مساحة مخصصة لفحص وإصلاح الأجهزة بكفاءة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0013.jpg" alt="قطع الغيار" class="branch-img" loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>قطع الغيار</h4>
+                            <p>مخزون واسع من القطع الأصلية لجميع الأجهزة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0014.jpg" alt="فريق العمل" class="branch-img" loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>فريق العمل</h4>
+                            <p>فنيون متخصصون ذوي خبرة في مجال الصيانة</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch-item">
+                    <img src="branch/images/IMG-20260304-WA0017.jpg" alt="الواجهة الخارجية" class="branch-img"
+                        loading="lazy">
+                    <div class="branch-overlay">
+                        <div class="branch-info">
+                            <h4>الواجهة الخارجية</h4>
+                            <p>موقع الفرع في دمنة خدير - جوار مخبز الريان- مدخل شمعة </p>
                         </div>
                     </div>
                 </div>
@@ -379,27 +457,11 @@
                     <h3 class="contact-title">موقعنا</h3>
                     <div class="contact-details">
                         <p class="contact-address">
-                            <i class="fas fa-location-dot"></i>
-                            شارع سامع - مقابل محل الجرطي للكهربائيات
+                            <i class="fas fa-location-dot"></i>دمنة خدير - شارع سامع - مقابل محل البرطي للكهربائيات
                         </p>
                     </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <h3 class="contact-title">ساعات العمل</h3>
-                    <div class="contact-details">
-                        <p class="contact-hours">
-                            <i class="fas fa-calendar-alt"></i>
-                            السبت - الخميس
-                        </p>
-                        <p class="contact-hours">
-                            <i class="fas fa-clock"></i>
-                            8:00 صباحاً - 10:00 مساءً
-                        </p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -449,6 +511,7 @@
                     <ul class="footer-links">
                         <li><a href="#home">الرئيسية</a></li>
                         <li><a href="#about">من نحن</a></li>
+                        <li><a href="#branch">الفرع</a></li>
                         <li><a href="#services">خدماتنا</a></li>
                         <li><a href="#contact">تواصل معنا</a></li>
                     </ul>
@@ -465,7 +528,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 مؤيد الدميني لصيانة وبرمجة الهواتف الذكية والكمبيوتر والمودمات. جميع الحقوق محفوظة.</p>
+                <p>&copy; 2026 مؤيد الدميني لصيانة وبرمجة الهواتف الذكية والكمبيوتر . جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
@@ -485,7 +548,7 @@
 
     <script src="script.js"></script>
     <div style="text-align: center; padding: 20px; font-family: sans-serif; margin-top: 20px; direction: ltr;">
-        Developed by <a href="https://faroukalnamer.github.io/farouk-alnamer-cv" target="_blank"
+        Developed by <a href="https://farouk-alnamer.vercel.app/" target="_blank"
             style="text-decoration: none; font-weight: bold;">Farouk Alnamer</a>
     </div>
 </body>

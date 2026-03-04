@@ -9,6 +9,8 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 const navLinkItems = document.querySelectorAll('.nav-link');
+const announcementBar = document.getElementById('announcementBar');
+const announcementClose = document.getElementById('announcementClose');
 
 // ============================================
 // Navbar Scroll Effect
@@ -102,10 +104,21 @@ scrollTopBtn.addEventListener('click', () => {
 // Lightbox Gallery
 // ============================================
 const galleryItems = document.querySelectorAll('.gallery-item');
+const branchItems = document.querySelectorAll('.branch-item');
 
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
         const img = item.querySelector('.gallery-img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+branchItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('.branch-img');
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
         lightbox.classList.add('active');
@@ -136,7 +149,7 @@ function closeLightbox() {
 // ============================================
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         const duration = 2000;
@@ -162,7 +175,7 @@ function animateCounters() {
 // ============================================
 function setupScrollReveal() {
     const revealElements = document.querySelectorAll(
-        '.service-card, .brand-card, .gallery-item, .contact-card, .about-grid, .section-header'
+        '.service-card, .brand-card, .gallery-item, .branch-item, .contact-card, .about-grid, .section-header'
     );
 
     revealElements.forEach(el => {
@@ -213,12 +226,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
-        
+
         const target = document.querySelector(targetId);
         if (target) {
             const navHeight = navbar.offsetHeight;
             const targetPosition = target.offsetTop - navHeight - 20;
-            
+
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
@@ -257,4 +270,52 @@ document.addEventListener('DOMContentLoaded', () => {
     setupScrollReveal();
     setupCounterObserver();
     updateActiveNavLink();
+    setupAnnouncement();
 });
+
+// ============================================
+// Announcement Bar
+// ============================================
+function setupAnnouncement() {
+    if (!announcementBar || !announcementClose) return;
+
+    const STORAGE_KEY = 'announcementClosedAt'; // store timestamp (ms)
+    const HIDE_DAYS = 7;
+
+    // Check if announcement was closed within the last HIDE_DAYS
+    try {
+        const closedAt = localStorage.getItem(STORAGE_KEY);
+        if (closedAt) {
+            const closedTs = parseInt(closedAt, 10);
+            if (!isNaN(closedTs)) {
+                const now = Date.now();
+                const msInDay = 24 * 60 * 60 * 1000;
+                if (now - closedTs < HIDE_DAYS * msInDay) {
+                    announcementBar.style.display = 'none';
+                    return;
+                }
+            }
+        }
+    } catch (e) {
+        // ignore localStorage errors
+    }
+
+    // On close: save timestamp so announcement stays hidden for HIDE_DAYS
+    announcementClose.addEventListener('click', () => {
+        announcementBar.style.display = 'none';
+        try {
+            localStorage.setItem(STORAGE_KEY, String(Date.now()));
+        } catch (e) {
+            // ignore
+        }
+    });
+
+    // Small UX touch: allow clicking CTA to temporarily highlight the branch section
+    const cta = document.querySelector('.announcement-cta');
+    if (cta) {
+        cta.addEventListener('click', () => {
+            announcementBar.style.display = 'none';
+            try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch (e) { }
+        });
+    }
+}
